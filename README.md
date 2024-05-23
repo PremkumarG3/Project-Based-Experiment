@@ -9,37 +9,22 @@ To design and simulate the traffic light controller.
 Quartus II
 
 **THEORY:**
-	
-     	Consider a controller for traffic at the intersection of three main roads.  
-
-  ![image](https://github.com/naavaneetha/Project-Based-Experiment/assets/154305477/e3af03dd-a4de-4b21-af0a-a5a332a3e4b6)
-
-
+Consider a controller for traffic at the intersection of three main roads.  
+![image](https://github.com/naavaneetha/Project-Based-Experiment/assets/154305477/e3af03dd-a4de-4b21-af0a-a5a332a3e4b6)
  The traffic signal for all the three main roads have equal priority and they remain red by default.
-
  In state 00,the traffic signals remains red for first five counts and yellow of road1 turns on for the next four counts.
-
  In state 01, the green of road1 turns on for first five counts and yellow of road1 and road2 turns on for next four4 counts of this state.
- 
  In state 10, the traffic signal of road1 comes back to the red and that of road2 goes to green for tee first five counts.For the next four counts the traffic signal of road2 and road3 remains yellow.
-
-
  In state 11, the traffic signal of road2 comes back to the red and that of road3 goes to green for the first five counts.For the next four counts the traffic signal of road3 turns to yellow
-
  At the end of four states,the traffic signal of all the three roads come back to red.
-
 **Task Assigned**
-
 From the HDL code given formulate the correct code  to divert the traffic to path 1 direction and disable the control in other directions (Assume user is at MR3 spot)
-
 **Procedure**
-
 1.	Type the program in Quartus software.
 2.	Compile and run the program.
 3.	Generate the RTL schematic and save the logic diagram.
 4.	Create nodes for inputs and outputs to generate the timing diagram.
-5.	For different input combinations generate the timing diagram
-   
+5.	For different input combinations generate the timing diagram 
 **Program:**
 ##### Developed by: PREM KUMAR G
 ##### Register number: 212223230158
@@ -56,7 +41,6 @@ From the HDL code given formulate the correct code  to divert the traffic to pa
     output reg yellow3,
     output reg green3
 );
-
 // State machine definition
 parameter S_IDLE = 2'b00;
 parameter S_ROAD1 = 2'b01;
@@ -99,7 +83,6 @@ always @(posedge clk) begin
         end
     endcase
 end
-
 // Traffic light control logic
 always @(*) begin
     case(state)
@@ -149,7 +132,6 @@ always @(*) begin
         end
     endcase
 end
-
 endmodule
 ```
 Program for logic gates and verify its truth table in quartus using Verilog programming.
@@ -157,5 +139,6 @@ Program for logic gates and verify its truth table in quartus using Verilog prog
 ![331151786-199fd063-8eed-437f-b177-1a8d7ce5618f](https://github.com/baskarsaraswathy/Project-Based-Experiment/assets/144871005/fc975f00-791e-49b6-ab5e-29b862d13545)
 **Output Timing Waveform**
 ![331152152-2b7adec6-de9c-405e-a9e4-8ff2d9103f1d](https://github.com/baskarsaraswathy/Project-Based-Experiment/assets/144871005/d46310c0-be9f-4517-89f4-90e846b06cc7)
-**Result:**
+## Result:
+
 Thus the design and simulate the traffic light controller are successfullt executed.
